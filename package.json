@@ -1,0 +1,71 @@
+{
+  "name": "nextjs-starter",
+  "version": "3.0.0",
+  "description": "NextJS 13 starter with React 18, MUI v5 (emotion, light/dark mode support), Typescript, Jest, Testing Library, and Storybook support",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky",
+    "test": "jest --passWithNoTests",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@emotion/cache": "11.x.x",
+    "@emotion/react": "11.x.x",
+    "@emotion/server": "11.x.x",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "6.x.x",
+    "@mui/material": "6.x.x",
+    "@mui/material-nextjs": "^6.1.2",
+    "lodash.flow": "3.5.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@softwareventures/precise-commits": "4.x.x",
+    "@storybook/addon-essentials": "8.x.x",
+    "@storybook/addon-interactions": "8.x.x",
+    "@storybook/nextjs": "8.x.x",
+    "@storybook/react": "8.x.x",
+    "@testing-library/dom": "10.x.x",
+    "@testing-library/jest-dom": "6.x.x",
+    "@testing-library/react": "16.x.x",
+    "@testing-library/user-event": "14.x.x",
+    "@types/node": "20.x.x",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/testing-library__jest-dom": "6.x.x",
+    "@washingtonpost/storybook-addon-web-vitals": "0.x.x",
+    "eslint": "9.x.x",
+    "eslint-config-next": "latest",
+    "husky": "9.x.x",
+    "jest": "29.x.x",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-prepush": "3.x.x",
+    "lint-staged": "15.x.x",
+    "prettier": "3.x.x",
+    "typescript": "5.x.x"
+  },
+  "lint-staged": {
+    "base": "main",
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write .",
+      "eslint --fix"
+    ]
+  },
+  "lint-prepush": {
+    "base": "main",
+    "tasks": {
+      "*.{js,jsx,ts,tsx}": [
+        "yarn test --bail",
+        "eslint"
+      ]
+    }
+  },
+  "packageManager": "yarn@4.5.0"
+}
