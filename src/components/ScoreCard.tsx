@@ -1,5 +1,4 @@
 import Paper from '@mui/material/Paper'
-import Box from '@mui/material/Box'
 
 interface ScoreCardProps
 {
@@ -8,26 +7,18 @@ interface ScoreCardProps
 
 export default function ScoreCard({ score }: ScoreCardProps = { score: 0 }) {
   return (
-    <Box
+    <Paper
       sx={{
-        width: '20%',
-        height: '0%',
-        padding: '20%',
-        m: 2,
-        border: '1px solid black'
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        width: '100vh',
+        height: '33vh',
+        m: 3
       }}
     >
-      <Paper
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center'
-
-        }}
-      >
-        <h1>{score}</h1>
-      </Paper>
-    </Box>
+      <h1>{score}</h1>
+    </Paper>
   )
 }
